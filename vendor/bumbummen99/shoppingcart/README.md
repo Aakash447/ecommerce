@@ -7,7 +7,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/bumbummen99/shoppingcart/v/unstable)](https://packagist.org/packages/bumbummen99/shoppingcart)
 [![License](https://poser.pugx.org/bumbummen99/shoppingcart/license)](https://packagist.org/packages/bumbummen99/shoppingcart)
 
-This is a fork of [Crinsane's LaravelShoppingcart](https://github.com/Crinsane/LaravelShoppingcart) extended with minor features compatible with Laravel 6.
+This is a fork of [Crinsane's LaravelShoppingcart](https://github.com/Crinsane/LaravelShoppingcart) extended with minor features compatible with Laravel 7. An example integration can be [found here](https://github.com/bumbummen99/LaravelShoppingcartDemo).
 
 ## Installation
 
@@ -21,7 +21,7 @@ Now you're ready to start using the shoppingcart in your application.
 
 **As of version 2 of this package it's possibly to use dependency injection to inject an instance of the Cart class into your controller or other class**
 
-## Overview
+## Table of Contents
 Look at one of the following topics to learn more about LaravelShoppingcart
 
 * [Important note](#important-note)
@@ -110,6 +110,16 @@ $rowId = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
 
 Cart::update($rowId, 2); // Will update the quantity
 ```
+
+If you would like to update options of an item inside the cart, 
+
+```php
+$rowId = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+
+Cart::update($rowId, ['options'  => ['size' => 'small']]); // Will update the size option with new value
+```
+
+
 
 If you want to update more attributes of the item, you can either pass the update method an array or a `Buyable` as the second parameter. This way you can update all information of the item with the given rowId.
 
